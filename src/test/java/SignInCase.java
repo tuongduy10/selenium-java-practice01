@@ -19,10 +19,12 @@ public class SignInCase {
             driver.manage().window().maximize();
             Thread.sleep(1000);
 
-            WebElement signInElm = driver.findElement(By.xpath("//button[@class=\"btn-5 ant-btn ant-btn-primary ant-btn-round ant-btn-lg\"]"));
-            signInElm.click();
+            // choose account type
+            WebElement nonBscAcc = driver.findElement(By.xpath("//button[@class=\"btn-5 ant-btn ant-btn-primary ant-btn-round ant-btn-lg\"]"));
+            nonBscAcc.click();
             Thread.sleep(1000);
 
+            // input username, password
             WebElement usernameElm = driver.findElement(By.xpath("//input[@formcontrolname=\"username\"]"));
             usernameElm.sendKeys("admin");
             Thread.sleep(1000);
@@ -30,12 +32,13 @@ public class SignInCase {
             passwordElm.sendKeys("12345678@");
             Thread.sleep(1000);
 
+            // login
             WebElement loginElm = driver.findElement(By.xpath("//button[@class=\"ant-btn ant-btn-primary ant-btn-round\"]"));
             loginElm.click();
             Thread.sleep(1000);
 
-            String selectTwElmXpath = "//a[@title=\"Taiwan\"]";
-            WebElement selectTwElm = driver.findElement(By.xpath(""));
+            // choose country
+            WebElement selectTwElm = driver.findElement(By.xpath("//a[@title=\"Taiwan\"]"));
             selectTwElm.click();
             Thread.sleep(1000);
         }
